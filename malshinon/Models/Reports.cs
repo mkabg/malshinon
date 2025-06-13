@@ -1,18 +1,21 @@
-﻿namespace Models
-{
-    internal class Reports
-    {
-        public int ReportID;
-        public int ReporterID;
-        public int TargetID;
-        public string Text;
+﻿using System;
 
-        public Reports(int reportID, int reporterID, int targetID, string text)
+namespace Models
+{
+    public class Reports
+    {
+        public int ReportId;
+        public string ReporterCode;
+        public string TargetCode;
+        public string Text;
+        public DateTime DateTime;
+
+        public Reports(string reporterCode, string targetCode, string text)
         {
-            this.ReportID = reportID;
-            this.ReporterID = reporterID;
-            this.TargetID = targetID;
+            this.ReporterCode = reporterCode;
+            this.TargetCode = targetCode;
             this.Text = text;
+            this.DateTime = DateTime.Now;
         }
     }
 }

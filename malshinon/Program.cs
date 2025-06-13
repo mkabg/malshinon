@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace malshinon
+﻿namespace malshinon
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            ReporterController controller = new ReporterController();
+            controller.RunReportFlow();
         }
     }
 }

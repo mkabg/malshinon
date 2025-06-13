@@ -4,24 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace malshinon.Models
+namespace Models
 {
-    internal class Targets
+    public class Targets
     {
-        public int TargeID;
         public string TargetName;
-        public int NumOfReports;
+        public string TargeCode;
 
-        public Targets(int targetID, string targetName, int numOfReports)
+        public Targets(string targetName)
         {
-            this.TargeID = targetID;
             this.TargetName = targetName;
-            this.NumOfReports = numOfReports;
-        }
-
-        public bool Dangerous()
-        {
-            return this.NumOfReports >= 20;
+            People p = new People(targetName);
+            this.TargeCode = p.CodeName;
         }
     }
 }

@@ -4,26 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace malshinon.Models
+namespace Models
 {
-    internal class Reporters
+    public class Reporters
     {
-        public int ReporterID;
         public string ReporterName;
-        public int NumOfReports;
-        public int SumCharInAllReports;
+        public string ReporterCode;
 
-        public Reporters(int reporterID, string reporterName, int numOfReports, int sumCharInAllReports,)
+        public Reporters(string reporterName)
         {
-            this.ReporterID = reporterID;
             this.ReporterName = reporterName;
-            this.NumOfReports = numOfReports;
-            this.SumCharInAllReports = sumCharInAllReports;
-        }
-
-        public bool Avarge()
-        {
-            return (this.SumCharInAllReports / this.NumOfReports) > 100;
+            People p = new People(reporterName);
+            this.ReporterCode = p.CodeName;
         }
     }
 }
